@@ -52,12 +52,12 @@ export default function Home() {
     element.innerHTML = `<h1 style="font-size: 20px; font-weight: bold; margin-bottom: 16px;">提案書構成案</h1><div>${proposal.replace(/\n/g, "<br/>")}</div>`;
 
     const opt = {
-      margin:       10,
-      filename:     `提案書_${industry || "案"}.pdf`,
-      image:        { type: 'jpeg' as const, quality: 0.98 },
-      html2canvas:  { scale: 2 },
-      jsPDF:        { unit: "mm", format: "a4", orientation: "portrait" }
-    };
+  margin: 10,
+  filename: `提案書_${industry || "案"}.pdf`,
+  image: { type: 'jpeg' as const, quality: 0.98 },
+  html2canvas: { scale: 2 },
+  jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+} as const;
 
     html2pdf().set(opt).from(element).save();
   };
