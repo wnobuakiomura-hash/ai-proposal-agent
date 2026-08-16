@@ -24,11 +24,11 @@ ${detail}
 4. 実施施策・ソリューション構成
 5. スケジュール案`;
 
-    // Gemini 1.5 Flash モデルを使用して生成
-    const response = await ai.models.generateContent({
-      model: "gemini-1.5-flash",
-      contents: prompt,
-    });
+// 無料枠（Free Tier）対応の最新モデルに変更
+const response = await ai.models.generateContent({
+  model: "gemini-3.1-flash-lite",
+  contents: prompt,
+});
 
     return NextResponse.json({ proposal: response.text });
   } catch (error) {
