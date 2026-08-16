@@ -24,9 +24,9 @@ ${detail}
 4. 実施施策・ソリューション構成
 5. スケジュール案`;
 
-    // Gemini 2.5 Flash モデルを使用して生成
+    // Gemini 1.5 Flash モデルを使用して生成
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: "gemini-1.5-flash",
       contents: prompt,
     });
 
